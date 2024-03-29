@@ -1,0 +1,226 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgba(255, 195, 0, 0.7);
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+h2 {
+  margin: 20px 20px 40px;
+  background: rgba(250, 250, 250, 1);
+  border-radius: 30px;
+  color: rgb(255, 165, 0);
+  font-size: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+label {
+  margin-top: 10px;
+  padding-right: 10px;
+  width: 30%;
+}
+
+input {
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 15px;
+  height: 20px;
+  margin: 10px;
+  outline: none;
+  padding: 10px;
+  width: 40%;
+}
+
+input:focus {
+  border: 2px solid rgb(255, 165, 0);
+}
+
+h1 {
+  color: rgb(250, 165, 0);
+  margin: 15px;
+  text-align: center;
+}
+
+button {
+  background-color: rgb(250, 250, 250);
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 9px #999;
+  color: rgb(255, 165, 0);
+  cursor: pointer;
+  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  height: fit-content;
+  outline: 0;
+  padding: 10px 30px;
+  text-align: center;
+  transition: background 1s;
+  width: fit-content;
+}
+
+button:hover {
+  background-color: rgb(237, 233, 157);
+}
+
+button:active {
+  background-color: rgb(237, 233, 157);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 165, 0);
+}
+
+.description {
+  border-radius: 30px;
+  background: rgba(250, 250, 250, 1);
+  color: rgb(250, 165, 0);
+  font-size: 25px;
+  padding: 80px;
+  margin: 30px;
+}
+
+.input-box {
+  display: flex;
+  margin-bottom: 10px;
+  background: rgba(250, 250, 250, 1);
+  text-align: justify;
+}
+
+.inputs {
+  background: rgba(250, 250, 250, 1);
+  border-radius: 30px;
+  color: rgb(255, 165, 0);
+  font-size: 25px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.readings {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.voltage, .temperature {
+  background-color: rgba(250, 250, 250, 1);
+  border-radius: 20px;
+  margin: 20px 10px;
+  width: 50%;
+}
+
+.reading-i {
+  width: 43%;
+}
+
+.add-more-input, .remove-input {
+  float: right;
+  margin-left: 20px;
+}
+
+.mid {
+  margin: auto;
+}
+
+.container {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  padding: 5px;
+  width: 100%;
+}
+
+#box {
+  margin: 30px;
+}
+
+#report {
+  display: none;
+}
+
+#output {
+  background-color: rgba(250, 250, 250, 1);
+  border-radius: 30px;
+  display: none;
+
+  margin: 30px;
+  min-height: 100px;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+  width: 92%;
+}
+
+#proceed {
+  background-color: rgb(250, 250, 250);
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 9px #999;
+  color: rgb(255, 165, 0);
+  cursor: pointer;
+  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  float: right;
+  height: fit-content;
+  outline: 0;
+  padding: 10px 30px;
+  text-align: center;
+  transition: background 1s;
+  width: fit-content;
+}
+
+#procedd:hover {
+  background-color: rgb(237, 233, 157);
+}
+
+#proceed:active {
+  background-color: rgb(237, 233, 157);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.result, .chart {
+  text-align: center;
+}
+
+.l, .r {
+  color: rgb(255, 165, 0);
+  font-size: 25px;
+   width: 50%;
+}
+
+.r {
+  height: 20px;
+  margin: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+.btn {
+  margin: 20px 10px 25px 10px;
+}
+
+.submit {
+  text-align: center;
+}

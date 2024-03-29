@@ -1,0 +1,96 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgba(255, 195, 0, 0.9);
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+h1 {
+  color: rgba(255, 195, 0, 0.9);
+  margin: 15px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 195, 0, 0.9);
+}
+
+tr:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+#container {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  padding: 5px;
+  width: 100%;
+}
+
+#box {
+  margin: 30px;
+}
+
+.title {
+  width: 50%;
+  height: 20%;
+  padding: 20px;
+  margin: auto;
+  border-radius: 30px;
+  background-color: rgba(240, 240, 240, 1);
+}
+
+.styled-table {
+  overflow: hidden;
+  border-radius: 30px;
+  margin: 45px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: rgba(240, 240, 240, 1);
+  color: rgba(255, 195, 0, 0.9);
+  text-align: center;
+  font-size: 40px;
+  border-bottom: 7px solid #dddddd;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  background-color: rgba(240, 240, 240, 1);
+  color: rgba(255, 195, 0, 0.9);
+  border-bottom: 2px solid #dddddd;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.styled-table tbody tr:hover {
+  background-color: rgba(220, 220, 220, 1);
+}

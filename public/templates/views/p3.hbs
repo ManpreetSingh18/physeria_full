@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Equivalence mass and energy</title>
+  <link rel="stylesheet" href="../css/beautify.css">
+</head>
+
+
+<body>
+  <div class="container" id="form1">
+    <div class="box">
+      <div class="heading">
+        <h2>Understand the equivalence of mass and energy.</h2>
+      </div>
+      <form class="" action="/p3" method="post">
+        <div class="inputs">
+          <div class="input-box">
+            <label for="speedOfLight">Speed of light(In ):</label>
+            <input type="number" id="resistance" name="speedOfLight" value="" required><br><br>
+          </div>
+        </div>
+
+        <div class="btn">
+          <button class="add-more-input" type="button" name="button">+</button>
+        </div>
+
+        <div class="btn">
+          <button class="remove-input" type="button" name="button">-</button>
+        </div>
+
+        <div class="readings">
+
+          <div class="voltage mid">
+            <div class="input-fields">
+              <h1>Readings For Mass</h1>
+              <div class="reading">
+                <input class="reading-i" type="number" name="mass" value="" placeholder="reading 1" required>
+                <input class="reading-i" type="number" name="mass" value="" placeholder="reading 2" required>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="btn submit">
+          <button class="submit" type="submit" name="submit-button">Submit</button>
+        </div>
+      </form>
+      <div id="output">
+        <div class="result">
+
+          <div class="input-box">
+            <label class="l">Speed of Light:</label>
+            <label class="r"></label>
+          </div>
+
+          <div class="input-box">
+            <label class="l">Mass:</label>
+            <label class="r"></label>
+          </div>
+
+          <div class="input-box">
+            <label class="l">E:</label>
+            <label class="r"></label>
+          </div>
+
+        </div>
+        <div class="chart">
+          <canvas id="chartId" aria-label="chart" heigth="350" width="580"></canvas>
+        </div>
+
+      </div>
+      <div class="btn submit" id="report">
+        <button type="button" onClick=printForm()>Print</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+  <script src=" https://printjs-4de6.kxcdn.com/print.min.js"></script>
+  <script src="../javascript/p3.js" charset="utf-8"></script>
+
+</body>
+
+</html>
