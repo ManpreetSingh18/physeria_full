@@ -15,8 +15,10 @@ const ThicknessSheet = require("./models/thicknessSheet");
 const TwoJunction = require("./models/twoJunction");
 //var popup = require('popups');
 const alert = require('alert'); 
+const bcrypt = require('bcrypt');
 // Creating express object
 const app = express();
+
 
 const staticPath = path.join(__dirname, '../public');
 const templatePath = path.join(__dirname, '../public/templates/views');
@@ -86,10 +88,13 @@ app.get("/p9", (req, res) => {
 })
 
 app.post("/signup", async (req, res) => {
+  const bcrypt = require('bcrypt');
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(req.body.password,saltRounds);
   const registerUser = new Register({
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password
+    password: hashedPassword
   })
 
   try{
@@ -101,6 +106,7 @@ app.post("/signup", async (req, res) => {
   //const registered = await registerUser.save();
   //res.send("Registered Successfully");
   //alert("Registered Successfully");
+  
 
   res.render("home");
 })
@@ -110,13 +116,20 @@ app.post("/login", async (req, res) => {
     const check = await Register.findOne({
       email: req.body.email
     })
-
-    if (check.password === req.body.password) {
+    const match = await bcrypt.compare(req.body.password,check.password);
+    if (match) {
       res.render("proceed");
     } else {
       res.send("Wrong password")
     }
-  } catch {
+
+    // if (check.password === req.body.password) {
+    //   res.render("proceed");
+    // } else {
+    //   res.send("Wrong password")
+    // }
+  } catch(error) {
+    console.error(error)
     res.send("Wrong details//user does not exit")
   }
 })
