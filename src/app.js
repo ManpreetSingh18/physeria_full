@@ -13,7 +13,8 @@ const CompareEmf = require("./models/compareEmf");
 const DensitySonometer = require("./models/densitySonometer");
 const ThicknessSheet = require("./models/thicknessSheet");
 const TwoJunction = require("./models/twoJunction");
-
+//var popup = require('popups');
+const alert = require('alert'); 
 // Creating express object
 const app = express();
 
@@ -31,15 +32,22 @@ app.use(express.urlencoded({
 
 
 app.get("/", (req, res) => {
-  res.render("signup")
+  res.render("proceed")
+})
+//list of expreriments
+app.get("/exp", (req, res) => {
+  res.render("home")
 })
 app.get("/login", (req, res) => {
   res.render("login")
 })
-
-app.get("/home", (req, res) => {
-  res.render("home")
+app.get("/signup", (req, res) => {
+  res.render("signup")
 })
+
+// app.get("/home", (req, res) => {
+//   res.render("home")
+// })
 
 app.get("/p1", (req, res) => {
   res.render("p1")
@@ -84,9 +92,17 @@ app.post("/signup", async (req, res) => {
     password: req.body.password
   })
 
-  const registered = await registerUser.save();
+  try{
+    const registered = await registerUser.save()
+  }catch(error){
+    console.log("Error in signing in:",error.message)
+    res.send("Error in signup");
+  }
+  //const registered = await registerUser.save();
+  //res.send("Registered Successfully");
+  //alert("Registered Successfully");
 
-  res.render("proceed");
+  res.render("home");
 })
 
 app.post("/login", async (req, res) => {
