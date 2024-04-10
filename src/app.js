@@ -121,7 +121,8 @@ app.post("/signup", async (req, res) => {
     };
   } catch (error) {
     console.log("Error in signing in:", error.message);
-    res.send("Error in signup");
+    res.render("error", { message: "Error in signup" });
+    //res.send("Error in signup");
   }
   
   //const registered = await registerUser.save();
@@ -137,7 +138,10 @@ app.post("/login", async (req, res) => {
       email: req.body.email,
     });
     const match = await bcrypt.compare(req.body.password, check.password);
-
+    if (!match) {
+      res.send("Wrong password");
+    } 
+    
     if (match) {
       // Store user information in session
       req.session.user = {
@@ -150,11 +154,7 @@ app.post("/login", async (req, res) => {
       res.send("Please login to access this page");
     }
 
-    if (match) {
-      res.render("proceed");
-    } else {
-      res.send("Wrong password");
-    }
+  
 
     // if (check.password === req.body.password) {
     //   res.render("proceed");
