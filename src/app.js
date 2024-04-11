@@ -172,9 +172,10 @@ app.post("/signup", async (req, res) => {
       email: req.body.email,
       // Add other user properties if needed
     };
+    res.render("exp");
   } catch (error) {
     console.log("Error in signing in:", error.message);
-    res.render("error", { message: "Error in signup" });
+    res.render("signup", { error:"Error Occured .Email might be dupliacate" });
     //res.send("Error in signup");
   }
   
@@ -182,7 +183,7 @@ app.post("/signup", async (req, res) => {
   //res.send("Registered Successfully");
   //alert("Registered Successfully");
 
-  res.render("exp");
+  
 });
 
 app.post("/login", async (req, res) => {

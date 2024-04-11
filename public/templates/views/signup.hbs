@@ -52,6 +52,11 @@
             <input type="password" placeholder="password" minlength="8" name="password" value="">
 
           </div>
+          <div>
+            {{#if error}}
+            <p style="color: red;">{{error}}</p>
+            {{/if}}
+          </div>
 
         </div>
         <div class="btn-field">
