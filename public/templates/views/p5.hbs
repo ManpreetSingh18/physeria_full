@@ -10,6 +10,22 @@
 
 <body>
   <div class="container" id="form1">
+    <!--Navbar Code -->
+    <div class="topnav" id="myTopnav">
+      <a href="/">Home</a>
+      <a href="/login" style="">Login</a>
+      <a href="/signup">Signup</a>
+      <a href="/exp">List Of Experiment</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div class="topnav-right"> <!-- Update this line -->
+        {{#if user}}
+        <a>Welcome, {{user.name}}!</a>
+        {{/if}}
+      </div>
+    </div>
+    <!--Navbar Code Ends -->
     <div class="box">
       <div class="heading">
         <h2>Verifying law of series combination of resistance using meter bridge.</h2>
