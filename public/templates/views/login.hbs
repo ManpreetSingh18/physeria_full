@@ -21,8 +21,13 @@
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
+      <div class="topnav-right"> <!-- Update this line -->
+        {{#if user}}
+        <a>Welcome, {{user.name}}!</a>
+        {{/if}}
+      </div>
     </div>
-      <!--Navbar Code Ends -->
+    <!--Navbar Code Ends -->
 
     <div class="form-box form-box-login">
       <h1 id="title">Login</h1>
@@ -39,6 +44,11 @@
             <i class="fa fa-solid fa-lock"></i>
             <input type="password" placeholder="password" name="password" value="">
 
+          </div>
+          <div>
+            {{#if error}}
+            <p style="color: red;">{{error}}</p>
+            {{/if}}
           </div>
 
         </div>

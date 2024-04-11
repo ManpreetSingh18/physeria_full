@@ -14,7 +14,7 @@ const DensitySonometer = require("./models/densitySonometer");
 const ThicknessSheet = require("./models/thicknessSheet");
 const TwoJunction = require("./models/twoJunction");
 //var popup = require('popups');
-const alert = require("alert");
+
 const bcrypt = require("bcrypt");
 var session = require("express-session");
 // Creating express object
@@ -35,7 +35,7 @@ app.use(
 );
 app.use(
   session({
-    secret: "your-secret-key",
+    secret: "patiotsa",
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -45,17 +45,34 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.render("proceed");
+  if (req.session.user) {
+    res.render("home", { user: req.session.user });
+  }else{
+    res.render("home");
+  }
+  
 });
 //list of expreriments
 app.get("/exp", (req, res) => {
-  res.render("home");
+  if (req.session.user) {
+    res.render("exp", { user: req.session.user });
+  }else{
+    res.render("exp");
+  }
 });
 app.get("/login", (req, res) => {
-  res.render("login");
+  if (req.session.user) {
+    res.render("login", { user: req.session.user });
+  }else{
+    res.render("login");
+  }
 });
 app.get("/signup", (req, res) => {
-  res.render("signup");
+  if (req.session.user) {
+    res.render("signup", { user: req.session.user });
+  }else{
+    res.render("signup");
+  }
 });
 
 // app.get("/home", (req, res) => {
@@ -66,40 +83,76 @@ app.get("/p1", (req, res) => {
   if (req.session.user) {
     res.render("p1");
   } else {
-    res.send("Please login to continue..")
+    res.render("exp", { message: "Please Login to access practicals" });
   }
 });
 app.get("/p2", (req, res) => {
-  res.render("p2");
+  if (req.session.user) {
+    res.render("p2");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 
 app.get("/p3", (req, res) => {
-  res.render("p3");
+  if (req.session.user) {
+    res.render("p3");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 app.get("/p4", (req, res) => {
-  res.render("p4");
+  if (req.session.user) {
+    res.render("p4");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 app.get("/p5", (req, res) => {
-  res.render("p5");
+  if (req.session.user) {
+    res.render("p5");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 app.get("/p5", (req, res) => {
-  res.render("p5");
+  if (req.session.user) {
+    res.render("p5");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 
 app.get("/p6", (req, res) => {
-  res.render("p6");
+  if (req.session.user) {
+    res.render("p6");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 
 app.get("/p7", (req, res) => {
-  res.render("p7");
+  if (req.session.user) {
+    res.render("p7");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 
 app.get("/p8", (req, res) => {
-  res.render("p8");
+  if (req.session.user) {
+    res.render("p8");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 
 app.get("/p9", (req, res) => {
-  res.render("p9");
+  if (req.session.user) {
+    res.render("p9");
+  } else {
+    res.render("exp", { message: "Please Login to access practicals" });
+  }
 });
 
 app.post("/signup", async (req, res) => {
@@ -129,7 +182,7 @@ app.post("/signup", async (req, res) => {
   //res.send("Registered Successfully");
   //alert("Registered Successfully");
 
-  res.render("home");
+  res.render("exp");
 });
 
 app.post("/login", async (req, res) => {
@@ -139,7 +192,7 @@ app.post("/login", async (req, res) => {
     });
     const match = await bcrypt.compare(req.body.password, check.password);
     if (!match) {
-      res.send("Wrong password");
+      res.render("login", { error: "Wrong Password Entered" });
     } 
     
     if (match) {
@@ -149,10 +202,11 @@ app.post("/login", async (req, res) => {
         email: check.email,
         // Add other user properties if needed
       };
-      res.render("proceed");
-    } else {
-      res.send("Please login to access this page");
-    }
+      res.render("home", { user: req.session.user });
+    } 
+    // else {
+    //   res.send("Please login to access this page");
+    // }
 
   
 
@@ -162,8 +216,8 @@ app.post("/login", async (req, res) => {
     //   res.send("Wrong password")
     // }
   } catch (error) {
-    console.error(error);
-    res.send("Wrong details//user does not exit");
+    //console.error(error);
+    res.render("login", { error: "Error in signup" });
   }
 });
 

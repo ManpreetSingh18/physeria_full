@@ -4,101 +4,96 @@
 <head>
   <meta charset="utf-8">
   <title>List of Experiments</title>
-  <link rel="stylesheet" href="../css/home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/proceed.css">
+  <link rel="stylesheet" href="../css/beautify.css">
 </head>
 
 <body>
 
+  <!--Navbar Code -->
+  <div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="/login" style="">Login</a>
+    <a href="/signup">Signup</a>
+    <a href="/exp">List Of Experiment</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="topnav-right"> <!-- Update this line -->
+      {{#if user}}
+      <a>Welcome, {{user.name}}!</a>
+      {{/if}}
+    </div>
 
+  </div>
+  <!--Navbar Code Ends -->
   <div id="container">
 
-    <div class="topnav" id="myTopnav">
-      <a href="/">Home</a>
-      <a href="/login" style="">Login</a>
-      <a href="/signup">Signup</a>
-      <a href="/exp">List Of Experiment</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
+    <!--Navbar Code -->
 
 
     <div id="box">
+
       <div class="title">
-        <h1>Select any Experiment</h1>
+        <h2>Pre-Computation and Error Analysis of Physics Experiments</h2>
       </div>
-      <div class="list-contents">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th>S.NO</th>
-              <th>Experiments</th>
-            </tr>
-          </thead>
-          <tbody>
 
-            <tr>
-              <td>1</td>
-              <td><a href="/p1">To study Variation of Ge crystal resistivity with temo by four probe method and hence to
-                  determine the bandgap for it.</a></td>
-            </tr>
+      <div class="description">
+        <p align="justify">Professionals in the sciences and technology fields frequently have to provide quantitative
+          answers.Their answers to such questions should include the value and an error.Values plotted on graphs, values
+          determined from
+          calculations. In the Physics Laboratories, you need to acquire skills in analyzing and determining errors.
+          These skills will become automatic and will be valuable to you in almost any career related to science and
+          technology. Error analysis
+          is quite a sophisticated science.</p>
+        <br>
 
-            <tr>
-              <td>1</td>
-              <td><a href="/p2">To verify ohm's law and determine the current.</a></td>
-            </tr>
+        <p align="justify">Since the error analysis is an important part for physicist.In physics education the
+          comparison of data is essential, therefore we believe that the pre computational and error analysis can
+          provide better understanding of
+          problems.</p>
+        <br>
 
-            <tr>
-              <td>3</td>
-              <td><a href="/p3">Understand the equivalence of mass and energy.</a></td>
-            </tr>
+        <p align="justify">There are two types of errors: Random and Systematic.
+          <br>
+          A few number of repetitions of the measurement are required in order to identify a random error. The observed
+          value most likely contains a random error if it appears to change randomly with each subsequent measurement.
+          Note that the random
+          error can be measured more precisely with more number of observed values. Systematic errors may be specific to
+          the methods and apparatus.
+        </p>
+        <br>
 
-            <tr>
-              <td>4</td>
-              <td><a href="/p4">Finding the resistance of a given wire using metre bridge and hence determine
-                  resistivity of its material.</a></td>
-            </tr>
+        <p align="justify"> We have developed a model to compute the final result with errors of an experiment if the
+          observed data is provided as input into the system/model. Result and error analysis can be done via graphs,
+          log errors, percentage
+          errors. It provides comparative analysis of physics experiments by reducing the complexity of computation of
+          experiments and reducing manual labour.</p>
 
+        <br>
 
-            <tr>
-              <td>5</td>
-              <td><a href="/p5">Verifying law of series combination of resistance using meter bridge.</a></td>
-            </tr>
+        <p align="justify">We believe that this model shall be beneficial in enhancing the accuracy and consistency of
+          the experiments results. Pre computational analysis gives flexibility to perform experiments on costly
+          equipments.This innovation
+          not only saves time but also helps in optimization of experimental data, avoidance of computational error and
+          preserves experimetal data.</p>
+        <br>
+        <p align="justify"> Here we have made a program to find that the final result of our experiments and by
+          comparing it with human calculated value we can find out the percentage of error, log error in calculation
+          .Errors are a measure of the
+          lack of certainty in a value . From this project we have found that human calculations are more prone to error
+          therefore using computer in experiments would reduce the error and give more accurate values.Therefore, we
+          believe that this
+          project shall provide a comparative and easy study for analyzing different physics experiments.
+        </p>
 
-            <tr>
-              <td>6</td>
-              <td><a href="/p6">To compare emf of two given primary cells using potentiometer.</a></td>
-            </tr>
-
-            <tr>
-              <td>7</td>
-              <td><a href="/p7">To determine density of solid using sonometer.</a></td>
-            </tr>
-
-            <tr>
-              <td>8</td>
-              <td><a href="/p8">Measurement thickness of a given sheet.</a></td>
-            </tr>
-
-            <tr>
-              <td>9</td>
-              <td><a href="/p9">Variation of temp of two junction vs thermo EMF.</a></td>
-            </tr>
-            <tr>
-
-            <tr>
-              <td>10</td>
-              <td><a href="/p1">To study Variation of Ge crystal resistivity with temo by four probe method and hence to
-                  determine the bandgap for it.</a></td>
-            </tr>
-
-          </tbody>
-        </table>
+      </div>
+      <div class="btn submit" id="proceed">
+        <a href="/exp">Proceed</a>
       </div>
     </div>
   </div>
- <script src="../javascript/home.js"></script>
+
 </body>
 
 </html>
